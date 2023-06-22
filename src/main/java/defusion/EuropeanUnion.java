@@ -31,7 +31,10 @@ public class EuropeanUnion {
         }
 
         if(countries.size() > 1 && countries.stream().anyMatch(Country::isIsolated)) {
-            throw new InputMismatchException("One of a countries is isolated");
+            try (PrintWriter writer = new PrintWriter(OUTPUT_FILE)) {
+	        writer.println("One of countries is isolated");
+	    } 
+	    throw new InputMismatchException("One of a countries is isolated");
         }
 
     }
