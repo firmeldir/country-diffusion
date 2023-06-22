@@ -16,6 +16,7 @@ public class Country {
     @Getter
     private final List<City> cities = new ArrayList<>();
 
+
     @Getter
     @Setter
     private int completeDay = -1;
