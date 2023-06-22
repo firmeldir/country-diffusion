@@ -26,6 +26,18 @@ public class Country {
         this.upperRightPosition = upperRightPosition;
     }
 
+    public Country(String[] strings) {
+        this.name = strings[0];
+        this.lowerLeftPosition = new Coordinate(
+                        Integer.parseInt(strings[1]),
+                        Integer.parseInt(strings[2])
+                );
+        this.upperRightPosition = new Coordinate(
+                        Integer.parseInt(strings[3]),
+                        Integer.parseInt(strings[4])
+                );
+    }
+
     public static Country buildFromString(String string) {
         String[] stringParts = string.split(" ");
         return new Country(
