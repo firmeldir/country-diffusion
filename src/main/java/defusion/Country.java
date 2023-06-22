@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Country {
+
     public final String name;
     @Getter
     private final Coordinate lowerLeftPosition;
