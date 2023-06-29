@@ -29,6 +29,9 @@ public class Main {
                 testCaseNum++;
                 int numberCountries = Integer.parseInt(strings.get(i));
                 EuropeanUnion europeanUnion = EuropeanUnion.buildFromStrings(strings.subList(i + 1, i + numberCountries + 1));
+                if (numberCountries != 20) {
+                    throw IllegalStateException("numberCountries != 20");
+                }
                 i += numberCountries;
 
                 writer.println("Case Number " + testCaseNum);
@@ -36,6 +39,9 @@ public class Main {
 
                 europeanUnion.getCountries().sort(countryComparator);
                 for (Country country : europeanUnion.getCountries()) {
+                    if (country.name.length() > 25) {
+                        throw IllegalStateException(country.name.length() > 25");
+                    }
                     writer.println(country.name + " " + country.getCompleteDay());
                 }
             }
