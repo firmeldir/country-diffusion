@@ -30,6 +30,9 @@ public class Country {
 
     public Country(String[] strings) {
         this.name = strings[0];
+        if (strings.length < 5) {
+            throw IllegalStateException("strings.length < 5");
+        }
         this.lowerLeftPosition = new Coordinate(
                         Integer.parseInt(strings[1]),
                         Integer.parseInt(strings[2])
